@@ -20,6 +20,11 @@ namespace azurecoremvc
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.ConfigureAppConfiguration(config =>
+                    {
+                        var setting = config.Build();
+                        config.AddAzureAppConfiguration("Endpoint=https://az204webappappconfig.azconfig.io;Id=QN64-l3-s0:yoKTsMeyRakCxvs0msE7;Secret=a/SVeh4vkzWNjQ6hhfpqorHBrfFWUQdiAzkGVRYxOtg=");
+                    });
                     webBuilder.UseStartup<Startup>();
                 });
     }

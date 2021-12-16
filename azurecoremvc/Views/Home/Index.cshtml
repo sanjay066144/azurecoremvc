@@ -1,11 +1,13 @@
 ﻿@model List<azurecoremvc.employee>
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration config
 @{
     ViewData["Title"] = "GitHUb Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome GitHub App!Sanjay</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>. DB name: @config["dbname"]</p>
     @foreach (var item in Model)
     {
         <span>@item.id</span><span>@item.name</span>
